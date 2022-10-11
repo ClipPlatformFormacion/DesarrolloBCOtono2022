@@ -6,6 +6,15 @@ table 50100 Course
         field(1; "No."; Code[20])
         {
             CaptionML = ENU = 'No.', ESP = 'Nº';
+
+            trigger OnValidate()
+            begin
+                if "No." <> xRec."No." then begin
+                    ResSetup.Get();
+                    NoSeriesMgt.TestManual(ResSetup."Resource Nos.");
+                    "No. Series" := '';
+                end;
+            end;
         }
         field(2; Name; Text[100])
         {
@@ -38,10 +47,29 @@ table 50100 Course
         {
             CaptionML = ENU = 'Type', ESP = 'Tipo';
         }
+        field(56; "No. Series"; Code[20])
+        {
+            Caption = 'No. Series';
+            Editable = false;
+            TableRelation = "No. Series";
+        }
     }
 
     keys
     {
         key(PK; "No.") { }
     }
+
+    trigger OnInsert()
+    begin
+        if "No." = '' then begin
+            ResSetup.Get();
+            ResSetup.TestField("Resource Nos.");
+            NoSeriesMgt.InitSeries(ResSetup."Resource Nos.", xRec."No. Series", 0D, "No.", "No. Series");
+        end;
+    end;
+
+    var
+        ResSetup: Record "Resources Setup"; //TODO: Crear nuestra propia configuración
+        NoSeriesMgt: Codeunit NoSeriesManagement;
 }

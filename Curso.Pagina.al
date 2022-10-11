@@ -12,22 +12,22 @@ page 50101 Course
             group(General)
             {
                 CaptionML = ENU = 'General', ESP = 'General';
-                field("No."; "No.") { ApplicationArea = All; }
-                field(Name; Name) { ApplicationArea = All; }
-                field("Duration (hours)"; "Duration (hours)") { ApplicationArea = All; }
-                field("Language Code"; "Language Code") { ApplicationArea = All; }
+                field("No."; Rec."No.") { ApplicationArea = All; }
+                field(Name; Rec.Name) { ApplicationArea = All; }
+                field("Duration (hours)"; Rec."Duration (hours)") { ApplicationArea = All; }
+                field("Language Code"; Rec."Language Code") { ApplicationArea = All; }
             }
             group(Training)
             {
                 CaptionML = ENU = 'Training', ESP = 'Formación';
-                field("Content Description"; "Content Description") { ApplicationArea = All; }
-                field("Type Option"; "Type Option") { ApplicationArea = All; }
-                field(Type; Type) { ApplicationArea = All; }
+                field("Content Description"; Rec."Content Description") { ApplicationArea = All; }
+                field("Type Option"; Rec."Type Option") { ApplicationArea = All; }
+                field(Type; Rec.Type) { ApplicationArea = All; }
             }
             group(Invoicing)
             {
                 CaptionML = ENU = 'Invoicing', ESP = 'Facturación';
-                field(Price; Price) { ApplicationArea = All; }
+                field(Price; Rec.Price) { ApplicationArea = All; }
             }
         }
     }

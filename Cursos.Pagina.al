@@ -14,11 +14,11 @@ page 50100 Courses
         {
             repeater(RepeaterControl)
             {
-                field("No."; "No.") { ApplicationArea = All; }
-                field(Name; Name) { ApplicationArea = All; }
-                field("Duration (hours)"; "Duration (hours)") { ApplicationArea = All; }
-                field(Price; Price) { ApplicationArea = All; }
-                field("Language Code"; "Language Code") { ApplicationArea = All; }
+                field("No."; Rec."No.") { ApplicationArea = All; }
+                field(Name; Rec.Name) { ApplicationArea = All; }
+                field("Duration (hours)"; Rec."Duration (hours)") { ApplicationArea = All; }
+                field(Price; Rec.Price) { ApplicationArea = All; }
+                field("Language Code"; Rec."Language Code") { ApplicationArea = All; }
             }
         }
     }
