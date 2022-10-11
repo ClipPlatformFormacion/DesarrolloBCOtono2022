@@ -4,6 +4,7 @@ page 50100 Courses
     ApplicationArea = All;
     UsageCategory = Lists;
     SourceTable = Course;
+    CaptionML = ENU = 'Courses', ESP = 'Cursos';
 
     layout
     {
@@ -18,6 +19,7 @@ page 50100 Courses
                 field(Price; Price) { ApplicationArea = All; }
                 field("Language Code"; "Language Code") { ApplicationArea = All; }
                 field("Type Option"; "Type Option") { ApplicationArea = All; }
+                field(Type; Type) { ApplicationArea = All; }
             }
         }
     }
