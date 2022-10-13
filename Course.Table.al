@@ -11,7 +11,7 @@ table 50100 "CLIP Course"
             begin
                 if "No." <> xRec."No." then begin
                     CoursesSetup.Get();
-                    NoSeriesMgt.TestManual(CoursesSetup."Course Nos.");
+                    NoSeriesManagement.TestManual(CoursesSetup."Course Nos.");
                     "No. Series" := '';
                 end;
             end;
@@ -65,11 +65,11 @@ table 50100 "CLIP Course"
         if Rec."No." = '' then begin
             CoursesSetup.Get();
             CoursesSetup.TestField("Course Nos.");
-            NoSeriesMgt.InitSeries(CoursesSetup."Course Nos.", xRec."No. Series", 0D, Rec."No.", Rec."No. Series");
+            NoSeriesManagement.InitSeries(CoursesSetup."Course Nos.", xRec."No. Series", 0D, Rec."No.", Rec."No. Series");
         end;
     end;
 
     var
         CoursesSetup: Record "CLIP Courses Setup";
-        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeriesManagement: Codeunit NoSeriesManagement;
 }

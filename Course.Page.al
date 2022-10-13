@@ -12,7 +12,11 @@ page 50101 "CLIP Course"
             group(General)
             {
                 CaptionML = ENU = 'General', ESP = 'General';
-                field("No."; Rec."No.") { ApplicationArea = All; }
+                field("No."; Rec."No.")
+                {
+                    ApplicationArea = All;
+                    ToolTipML = ENU = 'Identifiable course code', ESP = 'Código identificativo del curso';
+                }
                 field(Name; Rec.Name) { ApplicationArea = All; }
                 field("Duration (hours)"; Rec."Duration (hours)") { ApplicationArea = All; }
                 field("Language Code"; Rec."Language Code") { ApplicationArea = All; }

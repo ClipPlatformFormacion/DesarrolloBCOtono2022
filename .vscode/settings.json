@@ -5,5 +5,7 @@
     "CRS.FileNamePatternPageCustomizations": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
     "CRS.ExtensionObjectNamePattern": "<Prefix><BaseName>",
     "CRS.ObjectNamePrefix": "CLIP ",
-    "CRS.RemovePrefixFromFilename": true
+    "CRS.RemovePrefixFromFilename": true,
+    "al.enableCodeAnalysis" : true,
+    "al.codeAnalyzers" : ["${CodeCop}"]
 }
