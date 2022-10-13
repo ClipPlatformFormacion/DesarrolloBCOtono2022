@@ -10,8 +10,8 @@ table 50100 Course
             trigger OnValidate()
             begin
                 if "No." <> xRec."No." then begin
-                    ResSetup.Get();
-                    NoSeriesMgt.TestManual(ResSetup."Resource Nos.");
+                    CoursesSetup.Get();
+                    NoSeriesMgt.TestManual(CoursesSetup."Course Nos.");
                     "No. Series" := '';
                 end;
             end;
@@ -62,14 +62,14 @@ table 50100 Course
 
     trigger OnInsert()
     begin
-        if "No." = '' then begin
-            ResSetup.Get();
-            ResSetup.TestField("Resource Nos.");
-            NoSeriesMgt.InitSeries(ResSetup."Resource Nos.", xRec."No. Series", 0D, "No.", "No. Series");
+        if Rec."No." = '' then begin
+            CoursesSetup.Get();
+            CoursesSetup.TestField("Course Nos.");
+            NoSeriesMgt.InitSeries(CoursesSetup."Course Nos.", xRec."No. Series", 0D, Rec."No.", Rec."No. Series");
         end;
     end;
 
     var
-        ResSetup: Record "Resources Setup"; //TODO: Crear nuestra propia configuración
+        CoursesSetup: Record "Courses Setup";
         NoSeriesMgt: Codeunit NoSeriesManagement;
 }
