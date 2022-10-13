@@ -1,4 +1,4 @@
-table 50100 Course
+table 50100 "CLIP Course"
 {
     CaptionML = ENU = 'Course', ESP = 'Curso';
     fields
@@ -43,7 +43,7 @@ table 50100 Course
             OptionMembers = " ","Instructor-Lead","Video Tutorial";
             OptionCaptionML = ENU = ' ,Instructor-Lead,Video Tutorial', ESP = ' ,Guiado,Vídeo tutorial';
         }
-        field(8; Type; Enum "Course Type")
+        field(8; Type; Enum "CLIP Course Type")
         {
             CaptionML = ENU = 'Type', ESP = 'Tipo';
         }
@@ -70,6 +70,6 @@ table 50100 Course
     end;
 
     var
-        CoursesSetup: Record "Courses Setup";
+        CoursesSetup: Record "CLIP Courses Setup";
         NoSeriesMgt: Codeunit NoSeriesManagement;
 }
