@@ -7,5 +7,5 @@
     "CRS.ObjectNamePrefix": "CLIP ",
     "CRS.RemovePrefixFromFilename": true,
     "al.enableCodeAnalysis" : true,
-    "al.codeAnalyzers" : ["${CodeCop}"]
+    "al.codeAnalyzers" : ["${CodeCop}","${UICop}","${PerTenantExtensionCop}"]
 }
