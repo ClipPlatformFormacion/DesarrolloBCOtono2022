@@ -30,4 +30,13 @@ page 50100 "CLIP Courses"
             }
         }
     }
+
+    views
+    {
+        view(EnglishCourses)
+        {
+            CaptionML = ENU = 'English Courses', ESP = 'Cursos en inglés';
+            Filters = where("Language Code" = filter('ENU'));
+        }
+    }
 }
