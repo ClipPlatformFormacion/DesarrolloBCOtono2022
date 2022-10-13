@@ -24,6 +24,11 @@ page 50101 "CLIP Course"
                 field("Type Option"; Rec."Type Option") { ApplicationArea = All; }
                 field(Type; Rec.Type) { ApplicationArea = All; }
             }
+            part(CourseEditions; "CLIP Course Editions")
+            {
+                ApplicationArea = All;
+                SubPageLink = "Course No." = field("No.");
+            }
             group(Invoicing)
             {
                 CaptionML = ENU = 'Invoicing', ESP = 'Facturación';

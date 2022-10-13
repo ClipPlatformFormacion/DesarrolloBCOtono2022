@@ -21,5 +21,13 @@ page 50100 "CLIP Courses"
                 field("Language Code"; Rec."Language Code") { ApplicationArea = All; }
             }
         }
+        area(FactBoxes)
+        {
+            part(CourseEditions; "CLIP Course Editions")
+            {
+                ApplicationArea = All;
+                SubPageLink = "Course No." = field("No.");
+            }
+        }
     }
 }
