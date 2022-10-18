@@ -1,6 +1,7 @@
 table 50100 "CLIP Course"
 {
     CaptionML = ENU = 'Course', ESP = 'Curso';
+    DataClassification = CustomerContent;
     fields
     {
         field(1; "No."; Code[20])

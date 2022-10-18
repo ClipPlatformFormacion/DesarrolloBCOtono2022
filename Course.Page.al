@@ -1,6 +1,7 @@
 page 50101 "CLIP Course"
 {
-    CaptionML = ENU = 'Course', ESP = 'Curso';
+    Caption = 'Course';
+    // CaptionML = ENU = 'Course', ESP = 'Curso';
     PageType = Card;
     UsageCategory = None;
     SourceTable = "CLIP Course";
