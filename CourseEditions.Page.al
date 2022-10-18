@@ -1,6 +1,6 @@
 page 50103 "CLIP Course Editions"
 {
-    CaptionML = ENU = 'Course Editions', ESP = 'Ediciones curso';
+    Caption = 'Course Editions', Comment = 'ESP="Ediciones curso"';
     PageType = ListPart;
     UsageCategory = None;
     SourceTable = "CLIP Course Edition";

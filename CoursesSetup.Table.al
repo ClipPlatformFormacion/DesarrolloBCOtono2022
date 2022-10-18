@@ -1,18 +1,18 @@
 table 50101 "CLIP Courses Setup"
 {
-    CaptionML = ENU = 'Courses Setup', ESP = 'Conf. cursos';
+    Caption = 'Courses Setup', Comment = 'ESP="Conf. cursos"';
     DataClassification = CustomerContent;
 
     fields
     {
         field(1; "Primary Key"; Code[10])
         {
-            CaptionML = ENU = 'Primary Key', ESP = 'Clave primaria';
+            Caption = 'Primary Key', Comment = 'ESP="Clave primaria"';
             DataClassification = SystemMetadata;
         }
         field(2; "Course Nos."; Code[20])
         {
-            CaptionML = ENU = 'Course Nos.', ESP = 'Nº Cursos';
+            Caption = 'Course Nos.', Comment = 'ESP="Nº Cursos"';
             TableRelation = "No. Series";
         }
     }

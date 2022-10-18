@@ -1,6 +1,6 @@
 permissionset 50100 "CLIP Courses"
 {
-    CaptionML = ENU = 'Courses', ESP = 'Cursos';
+    Caption = 'Courses', Comment = 'ESP="Cursos"';
     Assignable = true;
     Permissions =
         tabledata "CLIP Course" = RIMD,

@@ -5,7 +5,7 @@ page 50100 "CLIP Courses"
     ApplicationArea = All;
     UsageCategory = Lists;
     SourceTable = "CLIP Course";
-    CaptionML = ENU = 'Courses', ESP = 'Cursos';
+    Caption = 'Courses', Comment = 'ESP="Cursos"';
     CardPageId = "CLIP Course";
 
     layout
@@ -35,7 +35,7 @@ page 50100 "CLIP Courses"
     {
         view(EnglishCourses)
         {
-            CaptionML = ENU = 'English Courses', ESP = 'Cursos en inglés';
+            Caption = 'English Courses', Comment = 'ESP="Cursos en inglés"';
             Filters = where("Language Code" = filter('ENU'));
         }
     }

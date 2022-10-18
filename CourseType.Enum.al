@@ -1,18 +1,18 @@
 enum 50100 "CLIP Course Type"
 {
     Extensible = true;
-    CaptionML = ENU = 'Course Type', ESP = 'Tipo curso';
+    Caption = 'Course Type', Comment = 'ESP="Tipo curso"';
 
     value(0; " ")
     {
-        CaptionML = ENU = ' ', ESP = ' ';
+        Caption = ' ', Comment = 'ESP=" "';
     }
     value(1; "Instructor-Lead")
     {
-        CaptionML = ENU = 'Intructor-Lead', ESP = 'Guiado';
+        Caption = 'Intructor-Lead', Comment = 'ESP="Guiado"';
     }
     value(2; "Video Tutorial")
     {
-        CaptionML = ENU = 'Video Tutorial', ESP = 'Vídeo tutorial';
+        Caption = 'Video Tutorial', Comment = 'ESP="Vídeo tutorial"';
     }
 }

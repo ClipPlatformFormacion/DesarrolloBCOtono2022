@@ -1,7 +1,6 @@
 page 50101 "CLIP Course"
 {
-    Caption = 'Course';
-    // CaptionML = ENU = 'Course', ESP = 'Curso';
+    Caption = 'Course', Comment = 'ESP="Curso"';
     PageType = Card;
     UsageCategory = None;
     SourceTable = "CLIP Course";
@@ -12,11 +11,11 @@ page 50101 "CLIP Course"
         {
             group(General)
             {
-                CaptionML = ENU = 'General', ESP = 'General';
+                Caption = 'General', Comment = 'ESP="General"';
                 field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
-                    ToolTipML = ENU = 'Identifiable course code', ESP = 'Código identificativo del curso';
+                    ToolTip = 'Identifiable course code', Comment = 'ESP="Código identificativo del curso"';
                 }
                 field(Name; Rec.Name) { ApplicationArea = All; }
                 field("Duration (hours)"; Rec."Duration (hours)") { ApplicationArea = All; }
@@ -24,7 +23,7 @@ page 50101 "CLIP Course"
             }
             group(Training)
             {
-                CaptionML = ENU = 'Training', ESP = 'Formación';
+                Caption = 'Training', Comment = 'ESP="Formación"';
                 field("Content Description"; Rec."Content Description") { ApplicationArea = All; }
                 field("Type Option"; Rec."Type Option") { ApplicationArea = All; }
                 field(Type; Rec.Type) { ApplicationArea = All; }
@@ -36,7 +35,7 @@ page 50101 "CLIP Course"
             }
             group(Invoicing)
             {
-                CaptionML = ENU = 'Invoicing', ESP = 'Facturación';
+                Caption = 'Invoicing', Comment = 'ESP="Facturación"';
                 field(Price; Rec.Price) { ApplicationArea = All; }
             }
         }
