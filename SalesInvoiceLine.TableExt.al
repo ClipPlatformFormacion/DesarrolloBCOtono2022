@@ -1,4 +1,4 @@
-tableextension 50100 "CLIP Sales Line" extends "Sales Line"
+tableextension 50102 "CLIP Sales Invoice Line" extends "Sales Invoice Line"
 {
     fields
     {
