@@ -21,6 +21,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course - Field Duration (hours) - Property Caption</note>
           <target>Duración (horas)</target>
         </trans-unit>
+        <trans-unit id="Table 2553370741 - Field 2139693550 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gen. Prod. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Grupo contable prod. gen."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course - Field Gen. Prod. Posting Group - Property Caption</note>
+          <target>Grupo contable prod. gen.</target>
+        </trans-unit>
         <trans-unit id="Table 2553370741 - Field 2273653569 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Language Code</source>
           <note from="Developer" annotates="general" priority="2">ESP="Cód. idioma"</note>
@@ -67,6 +73,12 @@
           <note from="Developer" annotates="general" priority="2">ESP=" ,Guiado,Vídeo tutorial"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course - Field Type Option - Property OptionCaption</note>
           <target> ,Guiado,Vídeo tutorial</target>
+        </trans-unit>
+        <trans-unit id="Table 2553370741 - Field 236064653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Prod. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Grupo contable IVA prod."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course - Field VAT Prod. Posting Group - Property Caption</note>
+          <target>Grupo contable IVA prod.</target>
         </trans-unit>
         <trans-unit id="Table 346014409 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Course Edition</source>
@@ -139,6 +151,18 @@
           <note from="Developer" annotates="general" priority="2">ESP="Facturación"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CLIP Course - Control Invoicing - Property Caption</note>
           <target>Facturación</target>
+        </trans-unit>
+        <trans-unit id="Page 2553370741 - Control 2139693550 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the item's product type to link transactions made for this item with the appropriate general ledger account according to the general posting setup.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Especifica el tipo de curso para vincular las transacciones realizadas para este curso con la cuenta de contabilidad correspondiente según la configuración de registro general."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CLIP Course - Control Gen. Prod. Posting Group - Property ToolTip</note>
+          <target>Especifica el tipo de curso para vincular las transacciones realizadas para este curso con la cuenta de contabilidad correspondiente según la configuración de registro general.</target>
+        </trans-unit>
+        <trans-unit id="Page 2553370741 - Control 236064653 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the VAT specification of the involved item or resource to link transactions made for this record with the appropriate general ledger account according to the VAT posting setup.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Indica la especificación de IVA del curso en cuestión para vincular las transacciones realizadas para este registro con la cuenta de contabilidad general adecuada según la configuración de grupos de registro."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CLIP Course - Control VAT Prod. Posting Group - Property ToolTip</note>
+          <target>Indica la especificación de IVA del curso en cuestión para vincular las transacciones realizadas para este registro con la cuenta de contabilidad general adecuada según la configuración de grupos de registro.</target>
         </trans-unit>
         <trans-unit id="Page 2553370741 - Control 2116756124 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Training</source>

@@ -37,6 +37,18 @@ page 50101 "CLIP Course"
             {
                 Caption = 'Invoicing', Comment = 'ESP="Facturación"';
                 field(Price; Rec.Price) { ApplicationArea = All; }
+                field("Gen. Prod. Posting Group"; Rec."Gen. Prod. Posting Group")
+                {
+                    ApplicationArea = Jobs;
+                    Importance = Promoted;
+                    ToolTip = 'Specifies the item''s product type to link transactions made for this item with the appropriate general ledger account according to the general posting setup.', Comment = 'ESP="Especifica el tipo de curso para vincular las transacciones realizadas para este curso con la cuenta de contabilidad correspondiente según la configuración de registro general."';
+                }
+                field("VAT Prod. Posting Group"; Rec."VAT Prod. Posting Group")
+                {
+                    ApplicationArea = Basic, Suite;
+                    Importance = Promoted;
+                    ToolTip = 'Specifies the VAT specification of the involved item or resource to link transactions made for this record with the appropriate general ledger account according to the VAT posting setup.', Comment = 'ESP="Indica la especificación de IVA del curso en cuestión para vincular las transacciones realizadas para este registro con la cuenta de contabilidad general adecuada según la configuración de grupos de registro."';
+                }
             }
         }
     }
