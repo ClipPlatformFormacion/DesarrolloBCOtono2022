@@ -3,7 +3,19 @@ codeunit 50140 "CLIP Courses Test"
     Subtype = Test;
 
     [Test]
-    procedure SelectCourseOnSalesLine()
+    procedure SelectCourseOnSalesDocuments()
+    begin
+        // [Scenario] Se puede seleccionar un curso en una línea de venta
+
+        SelectCourseOnSalesDocument("Sales Document Type"::Quote);
+        SelectCourseOnSalesDocument("Sales Document Type"::Order);
+        SelectCourseOnSalesDocument("Sales Document Type"::"Blanket Order");
+        SelectCourseOnSalesDocument("Sales Document Type"::Invoice);
+        SelectCourseOnSalesDocument("Sales Document Type"::"Credit Memo");
+        SelectCourseOnSalesDocument("Sales Document Type"::"Return Order");
+    end;
+
+    local procedure SelectCourseOnSalesDocument(SalesDocumentType: Enum "Sales Document Type")
     var
         Course: Record "CLIP Course";
         SalesHeader: Record "Sales Header";
@@ -12,12 +24,11 @@ codeunit 50140 "CLIP Courses Test"
         LibrarySales: Codeunit "Library - Sales";
         LibraryAssert: Codeunit "Library Assert";
     begin
-        // [Scenario] Se puede seleccionar un curso en una línea de venta
-
         // [Given] Un curso configurado con: nombre, grupos contables, precio
         Course := LibraryCourses.CreateCourse();
         //         Un documento de venta
-        LibrarySales.CreateSalesHeader(SalesHeader, "Sales Document Type"::Order, '');
+        LibrarySales.CreateSalesHeader(SalesHeader, SalesDocumentType, '');
+        LibrarySales.CreateSalesLine(SalesLine, SalesHeader, "Sales Line Type"::Item, '', 1);
         LibrarySales.CreateSalesLineSimple(SalesLine, SalesHeader);
 
         // [When] Seleccionamos el curso en una línea venta

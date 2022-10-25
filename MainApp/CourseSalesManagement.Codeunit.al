@@ -4,7 +4,8 @@ codeunit 50100 "CLIP Course Sales Management"
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterAssignFieldsForNo', '', false, false)]
     local procedure OnAfterAssignFieldsForNo(var SalesLine: Record "Sales Line"; var xSalesLine: Record "Sales Line"; SalesHeader: Record "Sales Header");
     begin
-        CopyFromCourse(SalesLine, SalesHeader);
+        if SalesLine.Type = SalesLine.Type::"CLIP Course" then
+            CopyFromCourse(SalesLine, SalesHeader);
     end;
 
     local procedure CopyFromCourse(var SalesLine: Record "Sales Line"; SalesHeader: Record "Sales Header")
