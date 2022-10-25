@@ -1,5 +1,5 @@
 *.app
 launch.json
 rad.json
-.vscode/.alcache/
-.vscode/.altemplates/
+*/.vscode/.alcache/
+*/.vscode/.altemplates/
