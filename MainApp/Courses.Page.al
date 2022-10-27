@@ -7,6 +7,7 @@ page 50100 "CLIP Courses"
     SourceTable = "CLIP Course";
     Caption = 'Courses', Comment = 'ESP="Cursos"';
     CardPageId = "CLIP Course";
+    PromotedActionCategories = 'New,Process,Reporting,AName', Comment = 'ESP="Nuevo,Proceso,Informes,UnNombre"';
 
     layout
     {
@@ -27,6 +28,25 @@ page 50100 "CLIP Courses"
             {
                 ApplicationArea = All;
                 SubPageLink = "Course No." = field("No.");
+            }
+        }
+    }
+
+    actions
+    {
+        area(Navigation)
+        {
+            action(Entries)
+            {
+                Caption = 'Ledger Entries', comment = 'ESP="Movimientos"';
+                Image = ResourceLedger;
+                ApplicationArea = All;
+                RunObject = page "CLIP Course Ledger Entries";
+                RunPageLink = "Course No." = field("No.");
+                Promoted = true;
+                PromotedCategory = Category4;
+                PromotedOnly = true;
+                ShortCutKey = 'Ctrl+F7';
             }
         }
     }

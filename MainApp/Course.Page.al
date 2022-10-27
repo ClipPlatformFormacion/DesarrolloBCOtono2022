@@ -52,4 +52,23 @@ page 50101 "CLIP Course"
             }
         }
     }
+
+    actions
+    {
+        area(Navigation)
+        {
+            action(Entries)
+            {
+                Caption = 'Ledger Entries', comment = 'ESP="Movimientos"';
+                Image = ResourceLedger;
+                ApplicationArea = All;
+                RunObject = page "CLIP Course Ledger Entries";
+                RunPageLink = "Course No." = field("No.");
+                Promoted = true;
+                PromotedCategory = Category4;
+                PromotedOnly = true;
+                ShortCutKey = 'Ctrl+F7';
+            }
+        }
+    }
 }
