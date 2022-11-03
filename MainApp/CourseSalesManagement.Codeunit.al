@@ -38,4 +38,52 @@ codeunit 50100 "CLIP Course Sales Management"
         Result := true;
         Handled := true;
     end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnPostSalesLineOnBeforePostSalesLine', '', false, false)]
+    local procedure OnPostSalesLineOnBeforePostSalesLine(SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line"; GenJnlLineDocNo: Code[20]; GenJnlLineExtDocNo: Code[35]; GenJnlLineDocType: Enum "Gen. Journal Document Type"; SrcCode: Code[10]; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; var IsHandled: Boolean);
+    begin
+        if SalesLine.Type = SalesLine.Type::"CLIP Course" then
+            PostCourseJournalLine(SalesHeader, SalesLine, GenJnlLineDocNo, GenJnlLineExtDocNo, SrcCode);
+    end;
+
+    local procedure PostCourseJournalLine(var SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line"; GenJnlLineDocNo: Code[20]; GenJnlLineExtDocNo: Code[35]; SrcCode: Code[10])
+    var
+        CourseJournalLine: Record "CLIP Course Journal Line";
+        CourseJournalPostLine: Codeunit "CLIP Course Journal-Post Line";
+        IsHandled: Boolean;
+    begin
+        IsHandled := false;
+        OnBeforePostCourseJournalLine(SalesHeader, SalesLine, IsHandled, GenJnlLineDocNo, GenJnlLineExtDocNo, SrcCode, CourseJournalPostLine);
+        if IsHandled then
+            exit;
+
+        if SalesLine."Qty. to Invoice" = 0 then
+            exit;
+
+        CourseJournalLine.Init();
+        CourseJournalLine.CopyFromSalesHeader(SalesHeader);
+        CourseJournalLine.CopyDocumentFields(GenJnlLineDocNo);
+        CourseJournalLine.CopyFromSalesLine(SalesLine);
+        OnPostCourseJournalLineOnAfterInit(CourseJournalLine, SalesLine);
+        CourseJournalLine."System-Created Entry" := true;
+
+        CourseJournalPostLine.RunWithCheck(CourseJournalLine);
+
+        OnAfterPostCourseJournalLine(SalesHeader, SalesLine, CourseJournalLine);
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforePostCourseJournalLine(var SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line"; var IsHandled: Boolean; GenJnlLineDocNo: Code[20]; GenJnlLineExtDocNo: Code[35]; SrcCode: Code[10]; CourseJournalPostLine: Codeunit "CLIP Course Journal-Post Line")
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnPostCourseJournalLineOnAfterInit(CourseJournalLine: Record "CLIP Course Journal Line"; var SalesLine: Record "Sales Line")
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterPostCourseJournalLine(var SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line"; CourseJournalLine: Record "CLIP Course Journal Line")
+    begin
+    end;
 }
