@@ -114,4 +114,92 @@ codeunit 50140 "CLIP Courses Test"
         LibraryAssert.AreEqual(SalesLine."Unit Price", CourseLedgerEntry."Unit Price", 'Dato incorrecto');
         LibraryAssert.AreEqual(SalesLine.Amount, CourseLedgerEntry."Total Price", 'Dato incorrecto');
     end;
+
+    [Test]
+    procedure SelectEditionOnSalesDocuments_CheckEditionMaxStudents()
+    begin
+        // [Scenario] Al seleccionar una edición en un curso de venta, el sistema comprueba si se ha llegado al número máximo de alumnos
+
+        // SelectEditionOnSalesDocument_CheckEditionMaxStudents("Sales Document Type"::Quote);
+        SelectEditionOnSalesDocument_CheckEditionMaxStudents("Sales Document Type"::Order);
+        // SelectEditionOnSalesDocument_CheckEditionMaxStudents("Sales Document Type"::"Blanket Order");
+        // SelectEditionOnSalesDocument_CheckEditionMaxStudents("Sales Document Type"::Invoice);
+        // SelectEditionOnSalesDocument_CheckEditionMaxStudents("Sales Document Type"::"Credit Memo");
+        // SelectEditionOnSalesDocument_CheckEditionMaxStudents("Sales Document Type"::"Return Order");
+    end;
+
+    local procedure SelectEditionOnSalesDocument_CheckEditionMaxStudents(SalesDocumentType: Enum "Sales Document Type")
+    var
+        Course: Record "CLIP Course";
+        CourseEdition: Record "CLIP Course Edition";
+        SalesHeader: Record "Sales Header";
+        SalesLine: Record "Sales Line";
+        LibraryCourses: Codeunit "CLIP Library - Courses";
+        LibrarySales: Codeunit "Library - Sales";
+        LibraryAssert: Codeunit "Library Assert";
+    begin
+        // [Given] Un curso configurado con: nombre, grupos contables, precio
+        Course := LibraryCourses.CreateCourse();
+        CourseEdition := LibraryCourses.CreateCourseEdition(Course."No.", 4);
+        //         Un documento de venta
+        LibrarySales.CreateSalesHeader(SalesHeader, SalesDocumentType, '');
+        LibrarySales.CreateSalesLineSimple(SalesLine, SalesHeader);
+
+        // [When] Seleccionamos el curso y edición en la línea venta
+        SalesLine.Validate(Type, "Sales Line Type"::"CLIP Course");
+        SalesLine.Validate("No.", Course."No.");
+        SalesLine.Validate("CLIP Course Edition", CourseEdition.Edition);
+        SalesLine.Validate(Quantity, 3);
+
+        // [Then] Nada, el sistema no tiene que mostrar ninguna notificación
+    end;
+
+    [Test]
+    [HandlerFunctions('MessageMaxStudentsExceeded')]
+    procedure SelectEditionOnSalesDocuments_CheckEditionMaxStudents_ShowNotification()
+    begin
+        // [Scenario] Al seleccionar una edición en un curso de venta, el sistema comprueba si se ha llegado al número máximo de alumnos
+
+        // SelectEditionOnSalesDocument_CheckEditionMaxStudents_ShowNotification("Sales Document Type"::Quote);
+        SelectEditionOnSalesDocument_CheckEditionMaxStudents_ShowNotification("Sales Document Type"::Order);
+        // SelectEditionOnSalesDocument_CheckEditionMaxStudents_ShowNotification("Sales Document Type"::"Blanket Order");
+        // SelectEditionOnSalesDocument_CheckEditionMaxStudents_ShowNotification("Sales Document Type"::Invoice);
+        // SelectEditionOnSalesDocument_CheckEditionMaxStudents_ShowNotification("Sales Document Type"::"Credit Memo");
+        // SelectEditionOnSalesDocument_CheckEditionMaxStudents_ShowNotification("Sales Document Type"::"Return Order");
+    end;
+
+    [MessageHandler]
+    procedure MessageMaxStudentsExceeded(Message: Text[1024])
+    var
+        LibraryAssert: Codeunit "Library Assert";
+        MaxStudentsExceededMsg: Label 'The current sale for course', comment = 'ESP="La venta actual para el curso"';
+    begin
+        LibraryAssert.AreEqual(true, Message.Contains(MaxStudentsExceededMsg), 'El mensaje no es el correcto');
+    end;
+
+    local procedure SelectEditionOnSalesDocument_CheckEditionMaxStudents_ShowNotification(SalesDocumentType: Enum "Sales Document Type")
+    var
+        Course: Record "CLIP Course";
+        CourseEdition: Record "CLIP Course Edition";
+        SalesHeader: Record "Sales Header";
+        SalesLine: Record "Sales Line";
+        LibraryCourses: Codeunit "CLIP Library - Courses";
+        LibrarySales: Codeunit "Library - Sales";
+        LibraryAssert: Codeunit "Library Assert";
+    begin
+        // [Given] Un curso configurado con: nombre, grupos contables, precio
+        Course := LibraryCourses.CreateCourse();
+        CourseEdition := LibraryCourses.CreateCourseEdition(Course."No.", 4);
+        //         Un documento de venta
+        LibrarySales.CreateSalesHeader(SalesHeader, SalesDocumentType, '');
+        LibrarySales.CreateSalesLineSimple(SalesLine, SalesHeader);
+
+        // [When] Seleccionamos el curso y edición en la línea venta
+        SalesLine.Validate(Type, "Sales Line Type"::"CLIP Course");
+        SalesLine.Validate("No.", Course."No.");
+        SalesLine.Validate("CLIP Course Edition", CourseEdition.Edition);
+        SalesLine.Validate(Quantity, 5);
+
+        // [Then] El sistema tiene que mostrar una notificación
+    end;
 }

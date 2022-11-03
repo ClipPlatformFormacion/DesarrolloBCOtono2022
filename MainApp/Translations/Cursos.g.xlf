@@ -373,6 +373,11 @@
           <note from="Developer" annotates="general" priority="2">ESP="Edición curso"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension CLIP Sales Invoice Line - Field CLIP Course Edition - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3335146236 - Method 799320939 - NamedType 1176815304" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 3335146236">
+          <source>The current sale for course %1 edition %2 will exceed the maximum number of students: %3</source>
+          <note from="Developer" annotates="general" priority="2">ESP="La venta actual para el curso %1 edición %2 superará el número máximo de alumnos: %3"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CLIP Sales Line - Method CheckCourseEditionMaxStudents - NamedType MaxStudentsExceededMsg</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3335146236 - Field 346014409 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Course Edition</source>
           <note from="Developer" annotates="general" priority="2">ESP="Edición curso"</note>
