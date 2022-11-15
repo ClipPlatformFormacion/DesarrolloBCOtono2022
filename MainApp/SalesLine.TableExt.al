@@ -40,10 +40,12 @@ tableextension 50100 "CLIP Sales Line" extends "Sales Line"
         if Rec.Quantity = 0 then
             exit;
 
+        CourseEdition.SetLoadFields("Max. Students");
         CourseEdition.Get(Rec."No.", Rec."CLIP Course Edition");
 
         CourseLedgerEntry.SetRange("Course No.", Rec."No.");
         CourseLedgerEntry.SetRange("Course Edition", Rec."CLIP Course Edition");
+        CourseLedgerEntry.SetLoadFields(Quantity);
         if CourseLedgerEntry.FindSet() then
             repeat
                 SoldQuantity := SoldQuantity + CourseLedgerEntry.Quantity;
