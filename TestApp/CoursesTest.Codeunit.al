@@ -140,7 +140,24 @@ codeunit 50140 "CLIP Courses Test"
     begin
         // [Given] Un curso configurado con: nombre, grupos contables, precio
         Course := LibraryCourses.CreateCourse();
-        CourseEdition := LibraryCourses.CreateCourseEdition(Course."No.", 4);
+        CourseEdition := LibraryCourses.CreateCourseEdition(Course."No.", 6);
+
+        // Algunos movimientos previos
+        LibrarySales.CreateSalesHeader(SalesHeader, SalesDocumentType, '');
+        LibrarySales.CreateSalesLineSimple(SalesLine, SalesHeader);
+        SalesLine.Validate(Type, "Sales Line Type"::"CLIP Course");
+        SalesLine.Validate("No.", Course."No.");
+        SalesLine.Validate("CLIP Course Edition", CourseEdition.Edition);
+        SalesLine.Validate(Quantity, 1);
+        SalesLine.Modify();
+        LibrarySales.CreateSalesLineSimple(SalesLine, SalesHeader);
+        SalesLine.Validate(Type, "Sales Line Type"::"CLIP Course");
+        SalesLine.Validate("No.", Course."No.");
+        SalesLine.Validate("CLIP Course Edition", CourseEdition.Edition);
+        SalesLine.Validate(Quantity, 1);
+        SalesLine.Modify();
+        LibrarySales.PostSalesDocument(SalesHeader, true, true);
+
         //         Un documento de venta
         LibrarySales.CreateSalesHeader(SalesHeader, SalesDocumentType, '');
         LibrarySales.CreateSalesLineSimple(SalesLine, SalesHeader);
@@ -190,6 +207,23 @@ codeunit 50140 "CLIP Courses Test"
         // [Given] Un curso configurado con: nombre, grupos contables, precio
         Course := LibraryCourses.CreateCourse();
         CourseEdition := LibraryCourses.CreateCourseEdition(Course."No.", 4);
+
+        // Algunos movimientos previos
+        LibrarySales.CreateSalesHeader(SalesHeader, SalesDocumentType, '');
+        LibrarySales.CreateSalesLineSimple(SalesLine, SalesHeader);
+        SalesLine.Validate(Type, "Sales Line Type"::"CLIP Course");
+        SalesLine.Validate("No.", Course."No.");
+        SalesLine.Validate("CLIP Course Edition", CourseEdition.Edition);
+        SalesLine.Validate(Quantity, 1);
+        SalesLine.Modify();
+        LibrarySales.CreateSalesLineSimple(SalesLine, SalesHeader);
+        SalesLine.Validate(Type, "Sales Line Type"::"CLIP Course");
+        SalesLine.Validate("No.", Course."No.");
+        SalesLine.Validate("CLIP Course Edition", CourseEdition.Edition);
+        SalesLine.Validate(Quantity, 1);
+        SalesLine.Modify();
+        LibrarySales.PostSalesDocument(SalesHeader, true, true);
+
         //         Un documento de venta
         LibrarySales.CreateSalesHeader(SalesHeader, SalesDocumentType, '');
         LibrarySales.CreateSalesLineSimple(SalesLine, SalesHeader);
