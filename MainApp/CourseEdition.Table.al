@@ -29,10 +29,16 @@ table 50102 "CLIP Course Edition"
             FieldClass = FlowField;
             CalcFormula = sum("CLIP Course Ledger Entry".Quantity where(
                                 "Course No." = field("Course No."),
-                                "Course Edition" = field(Edition)));
+                                "Course Edition" = field(Edition),
+                                "Posting Date" = field("Date Filter")));
             Editable = false;
             DecimalPlaces = 0 : 5;
             BlankZero = true;
+        }
+        field(6; "Date Filter"; Date)
+        {
+            Caption = 'Date Filter', comment = 'ESP="Filtro fechas"';
+            FieldClass = FlowFilter;
         }
     }
 
