@@ -57,8 +57,9 @@ table 50103 "CLIP Course Ledger Entry"
         {
             Clustered = true;
         }
-        key(Key2; "Course No.", "Posting Date")
+        key(Key2; "Course No.", "Course Edition", "Posting Date")
         {
+            SumIndexFields = Quantity;
         }
         key(Key5; "Document No.", "Posting Date")
         {
