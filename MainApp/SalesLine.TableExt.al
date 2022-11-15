@@ -29,7 +29,6 @@ tableextension 50100 "CLIP Sales Line" extends "Sales Line"
     local procedure CheckCourseEditionMaxStudents()
     var
         CourseEdition: Record "CLIP Course Edition";
-        CourseLedgerEntry: Record "CLIP Course Ledger Entry";
         MaxStudentsExceededMsg: Label 'The current sale for course %1 edition %2 will exceed the maximum number of students: %3', comment = 'ESP="La venta actual para el curso %1 edición %2 superará el número máximo de alumnos: %3"';
     begin
         if Rec.Type <> Rec.Type::"CLIP Course" then
@@ -39,14 +38,11 @@ tableextension 50100 "CLIP Sales Line" extends "Sales Line"
         if Rec.Quantity = 0 then
             exit;
 
-        CourseEdition.SetLoadFields("Max. Students");
+        CourseEdition.SetLoadFields("Max. Students", "Sales (Qty.)");
         CourseEdition.Get(Rec."No.", Rec."CLIP Course Edition");
+        CourseEdition.CalcFields("Sales (Qty.)");
 
-        CourseLedgerEntry.SetRange("Course No.", Rec."No.");
-        CourseLedgerEntry.SetRange("Course Edition", Rec."CLIP Course Edition");
-        CourseLedgerEntry.CalcSums(Quantity);
-
-        if CourseLedgerEntry.Quantity + Rec.Quantity > CourseEdition."Max. Students" then
+        if CourseEdition."Sales (Qty.)" + Rec.Quantity > CourseEdition."Max. Students" then
             Message(MaxStudentsExceededMsg, Rec."No.", Rec."CLIP Course Edition", CourseEdition."Max. Students");
     end;
 }
