@@ -368,6 +368,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CLIP Courses Setup - Control Course Nos. - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Report 3681575645 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Course Sales</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Ventas Cursos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CLIP Course Sales - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3681575645 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Opciones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CLIP Course Sales - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3681575645 - Control 1607396928 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>A text</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Un texto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CLIP Course Sales - Control AText - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3681575645 - Control 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>An option</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Una opción"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CLIP Course Sales - Control Name - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 399710922 - Field 346014409 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1173465396">
           <source>Course Edition</source>
           <note from="Developer" annotates="general" priority="2">ESP="Edición curso"</note>
