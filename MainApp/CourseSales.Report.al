@@ -16,13 +16,16 @@ report 50100 "CLIP Course Sales"
                 DataItemLink = "Course No." = field("No.");
                 DataItemTableView = sorting("Course No.", Edition);
 
-                column(Edition; Edition) { }
-                column(Max__Students; "Max. Students") { }
-                column(Sales__Qty__; "Sales (Qty.)") { }
+                column(Edition; Edition) { IncludeCaption = true; }
+                column(Max__Students; "Max. Students") { IncludeCaption = true; }
+                column(Sales__Qty__; "Sales (Qty.)") { IncludeCaption = true; }
             }
 
-            column(No_; Course."No.") { }
-            column(Name; Course.Name) { }
+            column(No_; Course."No.")
+            {
+                IncludeCaption = true;
+            }
+            column(Name; Course.Name) { IncludeCaption = true; }
         }
     }
 
