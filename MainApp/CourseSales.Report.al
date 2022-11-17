@@ -74,11 +74,6 @@ report 50100 "CLIP Course Sales"
         // }
     }
 
-    trigger OnPostReport()
-    begin
-        Message('Hay %1 iteraciones', Counter);
-    end;
-
     var
         AnOption: Boolean;
         AText: Text;
