@@ -4,7 +4,7 @@ report 50100 "CLIP Course Sales"
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
     ProcessingOnly = false;
-    DefaultRenderingLayout = RDLCLayout;
+    DefaultRenderingLayout = ExcelLayout;
 
     dataset
     {
@@ -65,11 +65,11 @@ report 50100 "CLIP Course Sales"
             Type = RDLC;
             LayoutFile = 'CourseSales.rdl';
         }
-        // layout(ExcelLayout)
-        // {
-        //     Type = Excel;
-        //     LayoutFile = 'CourseSales.xlsx';
-        // }
+        layout(ExcelLayout)
+        {
+            Type = Excel;
+            LayoutFile = 'CourseSales.xlsx';
+        }
         // layout(RDLC2)
         // {
         //     Type = RDLC;
