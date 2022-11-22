@@ -13,7 +13,7 @@ xmlport 50101 "CLIP Import Courses"
         {
             tableelement(Course; "CLIP Course")
             {
-                AutoUpdate = true;
+                AutoSave = false;
 
                 fieldelement(No; Course."No.") { }
                 fieldelement(Name; Course.Name) { }
@@ -28,11 +28,15 @@ xmlport 50101 "CLIP Import Courses"
                 trigger OnBeforeModifyRecord()
                 begin
                     DefaultData();
+
+                    Course.Modify();
                 end;
 
                 trigger OnBeforeInsertRecord()
                 begin
                     DefaultData();
+
+                    Course.Insert();
                 end;
             }
         }
