@@ -275,6 +275,18 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Courses Setup - Field Primary Key - Property Caption</note>
           <target>Clave primaria</target>
         </trans-unit>
+        <trans-unit id="Page 3580025414 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Action Ececution</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Ejecución acciones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CLIP Action Execution - Property Caption</note>
+          <target>Ejecución acciones</target>
+        </trans-unit>
+        <trans-unit id="Page 3580025414 - Action 132026153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Orders XML</source>
+          <note from="Developer" annotates="general" priority="2">ESP="XML Pedidos venta"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CLIP Action Execution - Action SalesOrderXML - Property Caption</note>
+          <target>XML Pedidos venta</target>
+        </trans-unit>
         <trans-unit id="Page 2553370741 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Course</source>
           <note from="Developer" annotates="general" priority="2">ESP="Curso"</note>
@@ -450,6 +462,12 @@
           <note from="Developer" annotates="general" priority="2">ESP="Una opción"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report CLIP Course Sales - Control Name - Property Caption</note>
           <target>Una opción</target>
+        </trans-unit>
+        <trans-unit id="XmlPort 1833937848 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Order Export</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Exportación Pedidos Venta"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort CLIP Sales Order Export - Property Caption</note>
+          <target>Exportación Pedidos Venta</target>
         </trans-unit>
         <trans-unit id="TableExtension 399710922 - Field 346014409 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1173465396">
           <source>Course Edition</source>
