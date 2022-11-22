@@ -2,9 +2,7 @@ xmlport 50100 "CLIP Sales Order Export"
 {
     Caption = 'Sales Order Export', comment = 'ESP="Exportación Pedidos Venta"';
     Direction = Export;
-    Format = VariableText;
-    FieldSeparator = ';';
-    FieldDelimiter = '';
+    Format = FixedText;
     RecordSeparator = '<NewLine>';
     FormatEvaluate = Xml;
 
@@ -15,11 +13,21 @@ xmlport 50100 "CLIP Sales Order Export"
             tableelement(SalesHeader; "Sales Header")
             {
                 SourceTableView = where("Document Type" = const(Order));
-                fieldelement(Customer; SalesHeader."Sell-to Customer No.") { }
-                fieldelement(No; SalesHeader."No.") { }
-                fieldelement(Date; SalesHeader."Order Date") { }
+                fieldelement(Customer; SalesHeader."Sell-to Customer No.")
+                {
+                    Width = 20;
+                }
+                fieldelement(No; SalesHeader."No.")
+                {
+                    Width = 20;
+                }
+                fieldelement(Date; SalesHeader."Order Date")
+                {
+                    Width = 10;
+                }
                 fieldelement(Currency; SalesHeader."Currency Code")
                 {
+                    Width = 3;
                     trigger OnBeforePassField()
                     var
                         GeneralLedgerSetup: Record "General Ledger Setup";
