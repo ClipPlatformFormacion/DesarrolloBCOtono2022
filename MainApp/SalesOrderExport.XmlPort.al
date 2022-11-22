@@ -2,7 +2,10 @@ xmlport 50100 "CLIP Sales Order Export"
 {
     Caption = 'Sales Order Export', comment = 'ESP="Exportación Pedidos Venta"';
     Direction = Export;
-    Format = Xml;
+    Format = VariableText;
+    FieldSeparator = ';';
+    FieldDelimiter = '';
+    RecordSeparator = '<NewLine>';
     FormatEvaluate = Xml;
 
     schema
@@ -27,25 +30,6 @@ xmlport 50100 "CLIP Sales Order Export"
                             SalesHeader."Currency Code" := GeneralLedgerSetup."LCY Code";
                         end;
                     end;
-                }
-
-
-                tableelement(SalesLine; "Sales Line")
-                {
-                    LinkTable = SalesHeader;
-                    LinkFields = "Document Type" = field("Document Type"), "Document No." = field("No.");
-
-                    textelement(Type)
-                    {
-                        trigger OnBeforePassVariable()
-                        begin
-                            Type := Format(SalesLine.Type);
-                        end;
-                    }
-                    fieldelement(No; SalesLine."No.") { }
-                    fieldelement(Quantity; SalesLine.Quantity) { }
-                    fieldelement(Price; SalesLine."Unit Price") { }
-                    fieldelement(Discount; SalesLine."Line Discount %") { }
                 }
             }
         }
