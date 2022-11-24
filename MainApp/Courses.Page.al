@@ -48,6 +48,16 @@ page 50100 "CLIP Courses"
                 PromotedOnly = true;
                 ShortCutKey = 'Ctrl+F7';
             }
+            action(ImportCourses)
+            {
+                Caption = 'Import Courses', comment = 'ESP="Importar cursos"';
+                Image = Import;
+                ApplicationArea = All;
+                RunObject = xmlport "CLIP Import Courses";
+                Promoted = true;
+                PromotedCategory = Category4;
+                PromotedOnly = true;
+            }
         }
     }
 

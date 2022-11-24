@@ -20,5 +20,8 @@ permissionset 50100 "CLIP Courses"
         tabledata "CLIP Course Journal Line" = RMID,
         page "CLIP Course Ledger Entries" = X,
         codeunit "CLIP Course Journal-Post Line" = X,
-        report "CLIP Course Sales" = X;
+        page "CLIP Action Execution" = X,
+        report "CLIP Course Sales" = X,
+        xmlport "CLIP Import Courses" = X,
+        xmlport "CLIP Sales Order Export" = X;
 }
