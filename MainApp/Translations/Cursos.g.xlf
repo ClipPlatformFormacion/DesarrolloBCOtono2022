@@ -243,6 +243,16 @@
           <note from="Developer" annotates="general" priority="2">ESP="XML Pedidos venta"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CLIP Action Execution - Action SalesOrderXML - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3580025414 - Action 3397403587 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Query</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Query Productos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CLIP Action Execution - Action SimpleItemQuery - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3580025414 - Action 3256036125 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Query AL</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Query Productos AL"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CLIP Action Execution - Action SimpleItemQuery_AL - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2553370741 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Course</source>
           <note from="Developer" annotates="general" priority="2">ESP="Curso"</note>
@@ -402,6 +412,11 @@
           <source>An option</source>
           <note from="Developer" annotates="general" priority="2">ESP="Una opción"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report CLIP Course Sales - Control Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Query 4176297313 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Simple Item Query</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Consulta simple de producto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Query CLIP Simple Item Query - Property Caption</note>
         </trans-unit>
         <trans-unit id="XmlPort 3032682183 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Import courses</source>
