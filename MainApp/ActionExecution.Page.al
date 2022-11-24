@@ -29,6 +29,34 @@ page 50105 "CLIP Action Execution"
                 PromotedCategory = Process;
                 PromotedOnly = true;
             }
+            action(SimpleItemQuery_AL)
+            {
+                Caption = 'Item Query AL', comment = 'ESP="Query Productos AL"';
+                ApplicationArea = All;
+                Image = Questionaire;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedOnly = true;
+
+                trigger OnAction()
+                var
+                    SimpleItemQuery: Query "CLIP Simple Item Query";
+                    Counter: Integer;
+                    ItemNo: Text;
+                begin
+                    SimpleItemQuery.SetFilter(Unit_Cost, '<50');
+                    SimpleItemQuery.SetRange(Replenishment_System, "Replenishment System"::Assembly);
+                    SimpleItemQuery.Open();
+
+                    while SimpleItemQuery.Read() do begin
+                        Counter += 1;
+                        ItemNo := ItemNo + ';' + SimpleItemQuery.No_;
+                    end;
+
+                    SimpleItemQuery.Close();
+                    Message(Format(Counter) + ' ' + ItemNo);
+                end;
+            }
         }
     }
 }

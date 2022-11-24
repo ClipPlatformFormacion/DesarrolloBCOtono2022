@@ -293,6 +293,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page CLIP Action Execution - Action SimpleItemQuery - Property Caption</note>
           <target>Query Productos</target>
         </trans-unit>
+        <trans-unit id="Page 3580025414 - Action 3256036125 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Query AL</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Query Productos AL"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CLIP Action Execution - Action SimpleItemQuery_AL - Property Caption</note>
+          <target>Query Productos AL</target>
+        </trans-unit>
         <trans-unit id="Page 2553370741 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Course</source>
           <note from="Developer" annotates="general" priority="2">ESP="Curso"</note>
