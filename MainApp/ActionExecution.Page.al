@@ -44,13 +44,13 @@ page 50105 "CLIP Action Execution"
                     Counter: Integer;
                     ItemNo: Text;
                 begin
-                    SimpleItemQuery.SetFilter(Unit_Cost, '<50');
+                    SimpleItemQuery.SetFilter(unitCost, '<50');
                     SimpleItemQuery.SetRange(Replenishment_System, "Replenishment System"::Assembly);
                     SimpleItemQuery.Open();
 
                     while SimpleItemQuery.Read() do begin
                         Counter += 1;
-                        ItemNo := ItemNo + ';' + SimpleItemQuery.No_;
+                        ItemNo := ItemNo + ';' + SimpleItemQuery.no;
                     end;
 
                     SimpleItemQuery.Close();

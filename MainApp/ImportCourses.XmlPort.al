@@ -1,11 +1,11 @@
 xmlport 50101 "CLIP Import Courses"
 {
     Caption = 'Import courses', comment = 'ESP="Importar Cursos"';
-    Format = VariableText;
-    FieldDelimiter = '';
-    FieldSeparator = ';';
+    Format = Xml;
     Direction = Import;
     UseRequestPage = false;
+    UseDefaultNamespace = true;
+    DefaultNamespace = 'urn:microsoft-dynamics-nav/xmlports/ImportCourse';
 
     schema
     {
