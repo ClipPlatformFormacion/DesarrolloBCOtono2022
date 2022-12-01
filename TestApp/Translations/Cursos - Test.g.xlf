@@ -8,6 +8,11 @@
           <note from="Developer" annotates="general" priority="2">ESP="La venta actual para el curso"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit CLIP Courses Test - Method MessageMaxStudentsExceeded - NamedType MaxStudentsExceededMsg</note>
         </trans-unit>
+        <trans-unit id="EnumExtension 972540070 - EnumValue 4206672242 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Enum 1236818424">
+          <source>Gold</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Oro"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">EnumExtension CLIP CLIP Customer Level - EnumValue CLIP Gold - Property Caption</note>
+        </trans-unit>
       </group>
     </body>
   </file>
