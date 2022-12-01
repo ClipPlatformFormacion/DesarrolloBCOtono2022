@@ -276,7 +276,7 @@
           <target>Clave primaria</target>
         </trans-unit>
         <trans-unit id="Page 3580025414 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Action Ececution</source>
+          <source>Action Execution</source>
           <note from="Developer" annotates="general" priority="2">ESP="Ejecución acciones"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CLIP Action Execution - Property Caption</note>
           <target>Ejecución acciones</target>
@@ -298,6 +298,12 @@
           <note from="Developer" annotates="general" priority="2">ESP="Query Productos AL"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CLIP Action Execution - Action SimpleItemQuery_AL - Property Caption</note>
           <target>Query Productos AL</target>
+        </trans-unit>
+        <trans-unit id="Page 3580025414 - Action 3383493608 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Process</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Proceso"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CLIP Action Execution - Action Category_Process - Property Caption</note>
+          <target>Proceso</target>
         </trans-unit>
         <trans-unit id="Page 2553370741 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Course</source>
@@ -346,6 +352,12 @@
           <note from="Developer" annotates="general" priority="2">ESP="Movimientos"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CLIP Course - Action Entries - Property Caption</note>
           <target>Movimientos</target>
+        </trans-unit>
+        <trans-unit id="Page 2553370741 - Action 1587086413 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Related</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Relacionado"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CLIP Course - Action Category_Category4 - Property Caption</note>
+          <target>Relacionado</target>
         </trans-unit>
         <trans-unit id="Page 2479163360 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Course Editions</source>
@@ -410,12 +422,6 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page CLIP Course Ledger Entries - Action &amp;Navigate - Property Caption</note>
           <target>Buscar movs...</target>
         </trans-unit>
-        <trans-unit id="Page 1580825612 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
-          <source>New,Process,Reporting,AName</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Nuevo,Proceso,Informes,UnNombre"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page CLIP Courses - Property PromotedActionCategories</note>
-          <target>Nuevo,Proceso,Informes,UnNombre</target>
-        </trans-unit>
         <trans-unit id="Page 1580825612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Courses</source>
           <note from="Developer" annotates="general" priority="2">ESP="Cursos"</note>
@@ -433,6 +439,12 @@
           <note from="Developer" annotates="general" priority="2">ESP="Importar cursos"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CLIP Courses - Action ImportCourses - Property Caption</note>
           <target>Importar cursos</target>
+        </trans-unit>
+        <trans-unit id="Page 1580825612 - Action 1587086413 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AName</source>
+          <note from="Developer" annotates="general" priority="2">ESP="UnNombre"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page CLIP Courses - Action Category_Category4 - Property Caption</note>
+          <target>UnNombre</target>
         </trans-unit>
         <trans-unit id="Page 1580825612 - View 14288736 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>English Courses</source>

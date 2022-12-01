@@ -1,6 +1,6 @@
 page 50105 "CLIP Action Execution"
 {
-    Caption = 'Action Ececution', comment = 'ESP="Ejecución acciones"';
+    Caption = 'Action Execution', comment = 'ESP="Ejecución acciones"';
     PageType = Card;
     ApplicationArea = All;
     UsageCategory = Administration;
@@ -15,9 +15,6 @@ page 50105 "CLIP Action Execution"
                 ApplicationArea = All;
                 RunObject = xmlport "CLIP Sales Order Export";
                 Image = Export;
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedOnly = true;
             }
             action(SimpleItemQuery)
             {
@@ -25,18 +22,12 @@ page 50105 "CLIP Action Execution"
                 ApplicationArea = All;
                 RunObject = query "CLIP Simple Item Query";
                 Image = Questionaire;
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedOnly = true;
             }
             action(SimpleItemQuery_AL)
             {
                 Caption = 'Item Query AL', comment = 'ESP="Query Productos AL"';
                 ApplicationArea = All;
                 Image = Questionaire;
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedOnly = true;
 
                 trigger OnAction()
                 var
@@ -56,6 +47,24 @@ page 50105 "CLIP Action Execution"
                     SimpleItemQuery.Close();
                     Message(Format(Counter) + ' ' + ItemNo);
                 end;
+            }
+        }
+        area(Promoted)
+        {
+            group(Category_Process)
+            {
+                Caption = 'Process', Comment = 'ESP="Proceso"';
+                ShowAs = SplitButton;
+
+                actionref(SalesOrderXML_Promoted; SalesOrderXML)
+                {
+                }
+                actionref(SimpleItemQuery_Promoted; SimpleItemQuery)
+                {
+                }
+                actionref(SimpleItemQuery_AL_Promoted; SimpleItemQuery_AL)
+                {
+                }
             }
         }
     }

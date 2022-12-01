@@ -7,7 +7,6 @@ page 50100 "CLIP Courses"
     SourceTable = "CLIP Course";
     Caption = 'Courses', Comment = 'ESP="Cursos"';
     CardPageId = "CLIP Course";
-    PromotedActionCategories = 'New,Process,Reporting,AName', Comment = 'ESP="Nuevo,Proceso,Informes,UnNombre"';
 
     layout
     {
@@ -43,9 +42,6 @@ page 50100 "CLIP Courses"
                 ApplicationArea = All;
                 RunObject = page "CLIP Course Ledger Entries";
                 RunPageLink = "Course No." = field("No.");
-                Promoted = true;
-                PromotedCategory = Category4;
-                PromotedOnly = true;
                 ShortCutKey = 'Ctrl+F7';
             }
             action(ImportCourses)
@@ -54,9 +50,21 @@ page 50100 "CLIP Courses"
                 Image = Import;
                 ApplicationArea = All;
                 RunObject = xmlport "CLIP Import Courses";
-                Promoted = true;
-                PromotedCategory = Category4;
-                PromotedOnly = true;
+            }
+        }
+        area(Promoted)
+        {
+            group(Category_Category4)
+            {
+                Caption = 'AName', Comment = 'ESP="UnNombre"';
+                ShowAs = SplitButton;
+
+                actionref(Entries_Promoted; Entries)
+                {
+                }
+                actionref(ImportCourses_Promoted; ImportCourses)
+                {
+                }
             }
         }
     }

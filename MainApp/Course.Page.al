@@ -64,10 +64,18 @@ page 50101 "CLIP Course"
                 ApplicationArea = All;
                 RunObject = page "CLIP Course Ledger Entries";
                 RunPageLink = "Course No." = field("No.");
-                Promoted = true;
-                PromotedCategory = Category4;
-                PromotedOnly = true;
                 ShortCutKey = 'Ctrl+F7';
+            }
+        }
+        area(Promoted)
+        {
+            group(Category_Category4)
+            {
+                Caption = 'Related', Comment = 'ESP="Relacionado"';
+
+                actionref(Entries_Promoted; Entries)
+                {
+                }
             }
         }
     }
