@@ -86,4 +86,27 @@ codeunit 50100 "CLIP Course Sales Management"
     local procedure OnAfterPostCourseJournalLine(var SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line"; CourseJournalLine: Record "CLIP Course Journal Line")
     begin
     end;
+
+
+    local procedure RecordsTemporales()
+    var
+        Customer: Record Customer;
+        NuevoValorDelLimiteDeCredito: Decimal;
+    begin
+        if Customer.FindSet() then
+            repeat
+                if CalculoDelLimiteDeCredito(NuevoValorDelLimiteDeCredito) then begin
+                    Customer."Credit Limit (LCY)" := NuevoValorDelLimiteDeCredito;
+                    Customer.Modify();
+                end;
+            until Customer.Next() = 0;
+    end;
+
+    [TryFunction]
+    local procedure CalculoDelLimiteDeCredito(var NuevoValorDelLimiteDeCredito: Decimal)
+    begin
+        Error('Procedure CalculoDelLimiteDeCredito not implemented.');
+    end;
+
+
 }

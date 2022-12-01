@@ -2,8 +2,7 @@ permissionset 50100 "CLIP Courses"
 {
     Caption = 'Courses', Comment = 'ESP="Cursos"';
     Assignable = true;
-    Permissions =
-        tabledata "CLIP Course" = RIMD,
+    Permissions = tabledata "CLIP Course" = RIMD,
         tabledata "CLIP Course Edition" = RIMD,
         tabledata "CLIP Courses Setup" = RIMD,
         table "CLIP Course" = X,
@@ -23,5 +22,7 @@ permissionset 50100 "CLIP Courses"
         page "CLIP Action Execution" = X,
         report "CLIP Course Sales" = X,
         xmlport "CLIP Import Courses" = X,
-        xmlport "CLIP Sales Order Export" = X;
+        xmlport "CLIP Sales Order Export" = X,
+        codeunit "CLIP Course WS" = X,
+        query "CLIP Simple Item Query" = X;
 }
